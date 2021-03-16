@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-//need a model
-
+//need a model for menuItems
+const Item = require('./models/menu_items')
 
 
 
