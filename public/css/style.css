@@ -1,3 +1,80 @@
 body {
-  background-color: #037ffc;
+  background: url(../images/woodbackground.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+#menuCardImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#descriptionTd {
+  padding-left: 10px;
+}
+
+ul {
+  background-image: url('../images/skyline.jpeg');
+
+}
+
+.nav-link {
+  color: white;
+}
+
+#navLogo {
+  width: 100px;
+  height: 100px
+}
+
+.menuCard {
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px
+}
+
+.menuCard:hover {
+  opacity: 70%;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+
+
+#menuCardAnchor {
+  color: white;
+  text-decoration: none;
+}
+
+#menuCardImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.showCard {
+  /* background-color: #7cc975; */
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px
+}
+
+#showCardImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px
+}
+
+#descriptionTdShow {
+  padding-left: 10px;
+}
+
+.backBtnDiv {
+  text-align: center;
 }

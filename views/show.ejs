@@ -1,9 +1,26 @@
 <%- include('./partials/header.ejs') %>
 <main>
 <h1>SHOW PAGE</h1>
-
-
-
+<div class='container'>
+  <div class='showCard'>
+    <h4><%=items.name%></h4>
+        <table class='showTable' width="100%">
+            <tr>
+                <td id='imageTdShow' align="left" valign="top">
+                  <img id='showCardImg' src="<%=items.img%>"/>
+                </td>
+                <td id='descriptionTdShow' align="left" valign="top">
+                  <p><%=items.description%></p><h5>$<%=items.price%></h5>
+                  <form class="" action="index.html" method="post">
+                    <!-- this button will post to shopping cart -->
+                    <button class="btn btn-outline-light">ADD TO CART</button>
+                  </form>
+                </td>
+              </tr>
+          </table>
+        </div>
+</div>
+<div class='backBtnDiv'><a href='/menu'><button class="btn btn-outline-secondary">BACK</button></a></div>
 
 <%- include('./partials/footer.ejs') %>
 </main>

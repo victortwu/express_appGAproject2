@@ -1,7 +1,22 @@
 <%- include('./partials/header.ejs') %>
 <main>
 <h1>MENU PAGE</h1>
+<div class="container">
+  <%   items.forEach((item, i) => { %>
+<a id='menuCardAnchor' href='/menu/<%=items[i].id%>'>
+    <div class='menuCard'>
+      <h5><%=items[i].name%></h5>
+        <table class='indexTable' width="100%">
+            <tr>
+                <td id='imageTd' align="left" valign="top"><img id='menuCardImg' src="<%=items[i].img%>"/></td>
+                <td id='descriptionTd' align="left" valign="top"><p><%=items[i].description%></p><h5>$<%=items[i].price%></h5></td>
+              </tr>
+            </table>
+    </div>
+</a>
+  <%})%>
 
+</div>
 
 
 
