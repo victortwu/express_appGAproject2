@@ -32,6 +32,8 @@ app.use((req, res, next) => {
   next()
 })
 
+app.use(express.static('public'))
+
 app.use(express.urlencoded( { extended: true } ))
 
 // when adding users and sessions, don't forget to install express-session
@@ -39,7 +41,7 @@ app.use(express.urlencoded( { extended: true } ))
 
 // HOME PAGE route
 app.get('/', (req, res) => {
-  res.send('<h1>This will be the Homepage route</h1>')
+  res.render('home.ejs')
 })
 
 //====== CONTROLLERS =========\\
