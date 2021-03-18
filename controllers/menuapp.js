@@ -4,6 +4,7 @@ const router = express.Router()
 //need a model for menuItems
 const Item = require('../models/menu_items')
 
+
 // seed route
 router.get('/seed', (req, res) => {
   Item.create([
@@ -43,6 +44,7 @@ router.get('/seed', (req, res) => {
   })
 })
 
+
 // menu or index
 router.get('/', (req, res) => {
   Item.find({}, (err, foundItems, next) =>{
@@ -57,12 +59,53 @@ router.get('/', (req, res) => {
   })
 })
 
+
 // new route //do I need this?
 router.get('/new', (req, res) => {
-  res.send('new route')
+  res.render('new.ejs')
 })
 
-// edit route //do I need this?
+
+// create - post
+router.post('/', (req, res) => {
+  Item.create(req.body, (err, createdItem) => {
+    if (err) {
+      console.log(err)
+      res.send(err)
+    } else {
+      res.redirect('/menu')
+    }
+  })
+})
+
+
+// delete route
+router.delete('/:id', (req, res) => {
+  Item.findByIdAndRemove(req.params.id, (err,data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect('/menu')
+    }
+  })
+})
+
+
+// edit route
+router.get('/:id/edit', (req, res) => {
+  Item.findById(req.params.id, (err, foundItem) => {
+    res.render('edit.ejs', {
+      item: foundItem
+    })
+  })
+})
+
+// update PUT
+router.put('/:id', (req, res) => {
+  Item.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedItem) => {
+    res.redirect('/menu')
+  })
+})
 
 //show route
 router.get('/:id', (req, res) => {

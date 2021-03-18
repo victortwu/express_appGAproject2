@@ -49,6 +49,10 @@ app.get('/', (req, res) => {
 const menuControllers = require('./controllers/menuapp')
 app.use('/menu', menuControllers)
 
+const cartControllers = require('./controllers/cart')
+app.use('/cart', cartControllers)
+
+
 
 app.listen(PORT, () => {
   console.log('Project 2 listening on port', PORT)

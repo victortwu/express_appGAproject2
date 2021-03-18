@@ -7,6 +7,11 @@ body {
   color: white;
 }
 
+h1 {
+  text-align: center;
+  padding: 15px;
+}
+
 #menuCardImg {
   width: 200px;
   height: 200px;
@@ -77,4 +82,13 @@ ul {
 
 .backBtnDiv {
   text-align: center;
+}
+
+.formDiv {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+#bottomInput {
+  margin-bottom: 15px;
 }
