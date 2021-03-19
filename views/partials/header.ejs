@@ -9,9 +9,10 @@
   <body>
 
 <nav>
-  <ul class="nav">
+
+  <ul class="nav nav-fill">
     <li class="nav-item">
-      <a class="nav-link active" href="/"><img id="navLogo" src="https://i.imgur.com/cEgIwcv.png"/></a>
+      <a class="nav-link active" href="/menu/new"><img id="navLogo" src="https://i.imgur.com/cEgIwcv.png"/></a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="/">Home</a>
@@ -19,9 +20,29 @@
     <li class="nav-item">
       <a class="nav-link" href="/menu">Menu</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/menu/new">New</a>
-    </li>
+    <% if (currentUser) { %>
+      <li id='welcomeUser' class="nav-item">Welcome <%=currentUser.name%></li>
+
+      <li class="nav-item">
+        <form action="/sessions?_method=DELETE" method="POST">
+          <button class="btn btn-outline-light">Log Out</button>
+        </form>
+
+      </li>
+
+    <%} else {%>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/sessions/new">Log In</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/users/new">Sign Up</a>
+      </li>
+
+    <%}%>
+
+
     <li class="nav-item">
       <a class="nav-link" href="/cart">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -30,6 +51,7 @@
 </a>
     </li>
   </ul>
+
 </nav>
 
   </body>

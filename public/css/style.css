@@ -27,6 +27,10 @@ ul {
 
 }
 
+.nav-item {
+  padding-top: 10px
+}
+
 .nav-link {
   color: white;
 }
@@ -91,4 +95,8 @@ ul {
 
 #bottomInput {
   margin-bottom: 15px;
+}
+
+#welcomeUser {
+  padding-top: 18px;
 }
