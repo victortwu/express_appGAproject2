@@ -53,7 +53,8 @@ router.get('/', (req, res) => {
       next(err)
     } else {
       res.render('index.ejs', {
-        items: foundItems
+        items: foundItems,
+        currentUser: req.session.currentUser
       })
     }
   })
@@ -62,7 +63,9 @@ router.get('/', (req, res) => {
 
 // new route //do I need this?
 router.get('/new', (req, res) => {
-  res.render('new.ejs')
+  res.render('new.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 
@@ -95,7 +98,8 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
     res.render('edit.ejs', {
-      item: foundItem
+      item: foundItem,
+      currentUser: req.session.currentUser
     })
   })
 })
@@ -111,7 +115,8 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
     res.render('show.ejs', {
-      items: foundItem
+      items: foundItem,
+      currentUser: req.session.currentUser
     })
   })
 })

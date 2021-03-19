@@ -4,8 +4,8 @@ const { Schema, model } = mongoose
 //require the cartSchema here
 
 const usersSchema = new Schema({
-  name: { type: String, required: true },
-  password: { type: String, required: true }
+  name: { type: String, unique: true, required: true },
+  password: String
 // mongoose association, import cart model
 
 // include an empty array for cart items
@@ -18,4 +18,4 @@ const usersSchema = new Schema({
 
 const User = model('User', usersSchema)
 
-modules.exports = User
+module.exports = User

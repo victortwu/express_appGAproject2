@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT
+const session = require('express-session')
+
 
 // setup DATABASE and connect
 const mongoose = require('mongoose')
@@ -37,21 +39,32 @@ app.use(express.static('public'))
 app.use(express.urlencoded( { extended: true } ))
 
 // when adding users and sessions, don't forget to install express-session
-
+app.use(session({ // <--------making req.sessions object
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
 
 // HOME PAGE route
 app.get('/', (req, res) => {
-  res.render('home.ejs')
+  res.render('home.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 //====== CONTROLLERS =========\\
 
-const menuControllers = require('./controllers/menuapp')
-app.use('/menu', menuControllers)
+const menuController = require('./controllers/menu_controller')
+app.use('/menu', menuController)
 
-const cartControllers = require('./controllers/cart')
-app.use('/cart', cartControllers)
+const cartController = require('./controllers/cart_controller')
+app.use('/cart', cartController)
 
+const userController = require('./controllers/users_controller')
+app.use('/users', userController)
+
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
 
 
 app.listen(PORT, () => {
