@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
 body {
   background: url(../images/woodbackground.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -10,6 +12,11 @@ body {
 h1 {
   text-align: center;
   padding: 15px;
+  font-family: Fjalla One, sans-serif;
+}
+
+h5 {
+  font-family: Fjalla One, sans-serif;
 }
 
 #menuCardImg {
@@ -23,8 +30,8 @@ h1 {
 }
 
 ul {
-  background-image: url('../images/skyline.jpeg');
-
+  /* background-image: url('../images/skyline.jpeg'); */
+  background-image: none;
 }
 
 .nav-item {
@@ -100,3 +107,69 @@ ul {
 #welcomeUser {
   padding-top: 18px;
 }
+
+
+/* .cnt {
+  margin: auto;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 15vh;
+} */
+/* .panel {
+  margin: auto;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 15vh;
+}
+
+.panel-inner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  /* transition: transform 0.75s; */
+  /* transform-style: preserve-3d;
+  animation: flip 4s linear forwards infinite;
+  animation-direction: normal;
+}
+
+.panel-front,
+.panel-back {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.panel-front img {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.panel-back {
+  /* background-color: teal;
+  color: white; */
+  /* border: 1px solid white;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+  /* padding: 5px; */
+}
+
+/* .panel-front img {
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+} */ */ */ */

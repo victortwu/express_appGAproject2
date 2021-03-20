@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
                 res.send(err)
             }
         } else {
-            res.redirect('/')
+            res.redirect('/sessions/new')
         }
   })
 })
