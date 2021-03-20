@@ -3,7 +3,7 @@
 <h1><%=items.name%></h1>
 <div class='container'>
   <div class='showCard'>
-    
+
         <table class='showTable' width="100%">
             <tr>
                 <td id='imageTdShow' align="left" valign="top">
@@ -11,9 +11,17 @@
                 </td>
                 <td id='descriptionTdShow' align="left" valign="top">
                   <p><%=items.description%></p><h5>$<%=items.price%></h5>
-                  <form class="" action="index.html" method="post">
+                  <form class="" action="/cart/<%=items.id%>" method="post">
                     <!-- this button will post to shopping cart -->
-                    <button class="btn btn-outline-light">ADD TO CART</button>
+                    <!-- BUT how do I get all the paths to go through and create the object?? -->
+                    <!-- <input type="hidden" name="productId" value="<%=items.id%>"> -->
+                    <input type="hidden" name="name" value="<%=items.name%>">
+                    <input type="hidden" name="description" value="<%=items.description%>">
+                    <input type="hidden" name="img" value="<%=items.img%>">
+                    <input type="hidden" name="price" value="<%=items.price%>">
+                    <input type="hidden" name="availability" value="<%=items.availability%>">
+
+                    <button type='submit' class="btn btn-outline-light">ADD TO CART</button>
                   </form>
                 </td>
               </tr>
