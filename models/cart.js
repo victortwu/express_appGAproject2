@@ -11,34 +11,34 @@ const { Schema, model } = mongoose
 
 
 
-//
-// const cartSchema = new Schema({
-//   userId: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User'
-//   },
-//   cartItems: [
-//     {
-//       productId: {
-//         type: mongoose.Schema.Types.ObjectId,
-//         ref: 'Item'
-//       },
-//       name: String,
-//       description: String,
-//       img: String,
-//       price: Number,
-//       availability: Boolean
-//     }
-//   ]
-// })
 
 const cartSchema = new Schema({
-  name: { type: String, required: true },
-  description: String,
-  img: String,
-  price: { type: Number, required: true },
-  availability: { type: Boolean, default: true }
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  cartItems: [
+    {
+      productId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Item'
+      },
+      name: String,
+      description: String,
+      img: String,
+      price: Number,
+      availability: Boolean
+    }
+  ]
 })
+
+// const cartSchema = new Schema({
+//   name: { type: String, required: true },
+//   description: String,
+//   img: String,
+//   price: { type: Number, required: true },
+//   availability: { type: Boolean, default: true }
+// })
 
 
 
