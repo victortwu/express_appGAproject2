@@ -10,7 +10,11 @@ const Cart = require('../models/cart')
 
 // get cart page
 router.get('/:id', (req, res) => {
+  console.log('From line 13', req.params.id)
   Cart.findById(req.params.id, (err, foundItem) => {
+    console.log('From line 14', foundItem)
+    
+
     res.render('cart.ejs', {
       cartItem: foundItem,
       currentUser: req.session.currentUser
@@ -24,22 +28,11 @@ router.get('/:id', (req, res) => {
 // Add to cart route - PUT
 // this route will push item to cart and redirect to show page (bc that's where the user is)
 router.post('/:id', (req, res) => {
-  console.log(req.body)
-  // const { productId, name, description, img, price, availability } = req.body
-  // console.log(req.body)
-  const newCartItem = Cart.create(req.body
-    // cartItems: [
-      // productId: productId,
-      // name: name,
-      // description: description,
-      // img: img,
-      // price: price,
-      // availability: availability
-      // }]
-  , (err, result)=> {
-    console.log(result)
-    // Cart.cartItems.push(result)
-    res.redirect('/cart/' + req.params.id)
+  console.log('From line 30', req.body)
+
+  const newCartItem = Cart.create(req.body, (err, result)=> {
+    console.log('From line 33', result)
+    res.redirect('/cart/' + result.id)
   })
 
   // newCartItem.save()
