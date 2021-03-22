@@ -27,6 +27,7 @@ const cartSchema = new Schema({
       description: String,
       img: String,
       price: Number,
+      quantity: Number,
       availability: Boolean
     }
   ]

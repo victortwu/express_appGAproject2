@@ -13,6 +13,7 @@
                   <p><%=items.description%></p><h5>$<%=items.price%></h5>
 
                   <% if (currentUser) { %>
+                    <% let num = 1 %>
                     <form class="" action="/cart/<%=items.id%>" method="post">
 
                       <input type="hidden" name="userId" value="<%=currentUser.id%>">
@@ -21,6 +22,7 @@
                       <input type="hidden" name="description" value="<%=items.description%>">
                       <input type="hidden" name="img" value="<%=items.img%>">
                       <input type="hidden" name="price" value="<%=items.price%>">
+                      <input type="hidden" name="quantity" value="<%=num%>">
                       <input type="hidden" name="availability" value="<%=items.availability%>">
 
                       <button type='submit' class="btn btn-outline-light">ADD TO CART</button>
