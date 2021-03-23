@@ -32,6 +32,22 @@ router.post('/:id', (req, res) => {
 const userId = req.session.currentUser._id
 const { productId, name, description, img, price, quantity, availability } = req.body
 
+// let foundCart = Cart.findOne({userId}, (err, result) => {
+//   console.log('At line 36, just result:', result)
+//   console.log('At line 37, result.cartItems[1].name:', result.cartItems[1].name)
+//   console.log('At line 37, req.body:', req.body)
+//   if (err) {
+//     console.log(err)
+//     res.send(err)
+//   } else {
+//     res.send(result)
+//   }
+//
+//
+// })
+//
+// console.log('At line 40', foundCart)
+
 //this DOES push into array, just got to figure out how to get it on to the page
 Cart.findOneAndUpdate( {userId}, { $push: { cartItems: [{
   productId,
@@ -46,20 +62,35 @@ Cart.findOneAndUpdate( {userId}, { $push: { cartItems: [{
 }]}}, (err, result) => {
   if (err) {
     console.log(err)
+  } else if (result === null) {
+    console.log('At line 66:', result)
+    Cart.create({userId, cartItems: [{
+                  productId,
+                  name,
+                  description,
+                  img,
+                  price,
+                  quantity,
+                  availability
+             }]}, (err, createdCart)=> {
+              console.log('From line 64', createdCart)
+              res.redirect('/cart/' + createdCart.id)
+            })
+
+
   } else {
-    console.log(result)
     res.redirect(result._id)
   }
 })
 
 // Cart.create({userId, cartItems: [{
-              // productId,
-              // name,
-              // description,
-              // img,
-              // price,
-              // quantity,
-              // availability
+//               productId,
+//               name,
+//               description,
+//               img,
+//               price,
+//               quantity,
+//               availability
 //          }]}, (err, createdCart)=> {
 //           console.log('From line 64', createdCart)
 //           res.redirect('/cart/' + createdCart.id)
