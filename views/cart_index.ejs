@@ -4,15 +4,26 @@
 <h1>CART</h1>
 
 
-<%cartItem.cartItems.forEach((cart, i) => {%>
-  <h5><%=cartItem.cartItems[i].name%> $<%=cartItem.cartItems[i].price%></h5>
+<%if (cartItem === null) {%>
 
-<%})%>
+  <h1>empty cart</h1>
+
+<%} else {%>
+
+  <%cartItem.cartItems.forEach((cart, i) => {%>
+    <h5><%=cartItem.cartItems[i].name%> $<%=cartItem.cartItems[i].price%></h5>
+
+  <%})%>
 
 
 
 
+  <form class="" action="/cart/<%=cartItem._id%>?_method=DELETE" method="POST">
+      <button class="btn btn-link">Place Order</button>
+  </form>
 
+
+<%}%>
 
 
 
