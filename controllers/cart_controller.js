@@ -7,6 +7,26 @@ const Cart = require('../models/cart')
 
 
 // routes
+//cart index linked to cart icon
+router.get('/', (req, res) => {
+  Cart.findOne( {userId: req.session.currentUser._id}, (err, foundCart, next) => {
+    console.log('Cart index cart: ', foundCart)
+    if(err) {
+      console.log(err)
+      next(err)
+    } else {
+      res.render('cart_index.ejs', {
+        cartItem: foundCart,
+        currentUser: req.session.currentUser
+      })
+    }
+  })
+})
+
+
+
+
+
 
 // get cart page
 router.get('/:id', (req, res) => {
@@ -14,7 +34,7 @@ router.get('/:id', (req, res) => {
   Cart.findById(req.params.id, (err, foundItem) => {
     console.log('From line 14', foundItem)
     // maybe the logic can go in here
-
+    console.log(req.sessions)
     res.render('cart.ejs', {
       cartItem: foundItem,
       currentUser: req.session.currentUser
