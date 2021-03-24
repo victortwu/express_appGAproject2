@@ -73,6 +73,54 @@ ul {
   border-radius: 10px;
 }
 
+#backMenu {
+  text-align: center;
+}
+
+#cartThumbImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#itemTable{
+  width: 100%;
+}
+
+#itemRow{
+  width: 100%;
+}
+
+#cellLeft {
+  width: 15%
+}
+
+#cellCenter {
+  width: 65%;
+}
+
+#cellRight {
+  width: 19%;
+}
+
+#trashImg{
+  width: 15px;
+  height: 15px;
+
+}
+
+#trashBtn {
+  opacity: 25%;
+  border: none;
+  border-radius: 10%;
+}
+
+#trashBtn:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+
 .showCard {
   /* background-color: #7cc975; */
   padding: 10px;
@@ -109,7 +157,9 @@ ul {
 }
 
 #cartItemsDiv {
-  background-color: rgba(255, 0, 0, 0.5);
+  margin-top: 8px;
+  background-color: rgba(91, 113, 117, 0.40);
+  border-radius: 5px;
 }
 
 .singleItemDiv {

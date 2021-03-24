@@ -2,17 +2,56 @@
 <main>
 
 <h1>CART</h1>
+<div id="backMenu">
+  <a href="/menu"><button class="btn btn-outline-light">BACK TO MENU</button></a>
+</div>
+<%if (cartItem === null) {%>
+
+  <h1>Thank you!</h1>
+
+<%} else {%>
+
+  <%cartItem.cartItems.forEach((cart, i) => {%>
+    <div class="container" id="cartItemsDiv">
+      <div class="singleItemDiv">
+        <table id="itemTable">
+          <tr id="itemRow">
+            <td id='cellLeft'>
+              <%let id = cartItem.cartItems[i]._id%>
+              <form class="" action="/cart/<%=cartItem._id%>/<%=id%>?_method=PUT" method="POST">
+                  <button id="trashBtn"><img id="trashImg" src="/images/trashbutton.png" alt=""></button>
+              </form>
+            </td>
+            <td id='cellCenter'>
+              <h6><%=cartItem.cartItems[i].name%></h6>
+              <h6>$<%=cartItem.cartItems[i].price%></h6>
+            </td>
+            <td id='cellRight' align="right" valign="top">
+              <img id="cartThumbImg" src="<%=cartItem.cartItems[i].img%>" alt="">
+            </td>
+          </tr>
+
+        </table>
 
 
-<%cartItem.cartItems.forEach((cart, i) => {%>
-  <h5><%=cartItem.cartItems[i].name%> $<%=cartItem.cartItems[i].price%></h5>
 
-<%})%>
+      </div>
 
-
-
+    </div>
+  <%})%>
 
 
+
+
+  <div class="placeOrder">
+    <form class="" action="/cart/<%=cartItem._id%>?_method=DELETE" method="POST">
+        <button class="btn btn-outline-light">Place Order</button>
+    </form>
+  </div>
+
+
+
+<%}%>
 
 
 
