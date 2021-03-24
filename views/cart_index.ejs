@@ -11,16 +11,27 @@
 <%} else {%>
 
   <%cartItem.cartItems.forEach((cart, i) => {%>
-    <h5><%=cartItem.cartItems[i].name%> $<%=cartItem.cartItems[i].price%></h5>
+    <div class="container" id="cartItemsDiv">
+      <div class="singleItemDiv">
+        <h6><%=cartItem.cartItems[i].name%> $<%=cartItem.cartItems[i].price%></h6>
+        <%let id = cartItem.cartItems[i]._id%>
+        <form class="" action="/cart/<%=cartItem._id%>/<%=id%>?_method=PUT" method="POST">
+            <button class="btn btn-outline-light">X</button>
+        </form>
+      </div>
 
+    </div>
   <%})%>
 
 
 
 
-  <form class="" action="/cart/<%=cartItem._id%>?_method=DELETE" method="POST">
-      <button class="btn btn-link">Place Order</button>
-  </form>
+  <div class="placeOrder">
+    <form class="" action="/cart/<%=cartItem._id%>?_method=DELETE" method="POST">
+        <button class="btn btn-outline-light">Place Order</button>
+    </form>
+  </div>
+
 
 
 <%}%>

@@ -83,6 +83,8 @@ const { productId, name, description, img, price, quantity, availability } = req
     })
 })
 
+
+
 //delete route for fake 'Place Order'
 router.delete('/:id', (req, res) => {
   Cart.findByIdAndRemove(req.params.id, (err, data) => {
@@ -94,8 +96,19 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+// remove current item from cartItems array
+router.put('/:id/:itemId', (req, res) => {
+  console.log('Line 101 req dot body:', req.body)
+  console.log('Line 102 id number you are getting: ', req.params.id)
+  console.log('Line 103 itemId number you are getting: ', req.params.itemId)
+  Cart.findByIdAndUpdate(req.params.id, {$pull: {cartItems: {_id: req.params.itemId}}}, (err, foundCart) => {
+    console.log('At line 105: ', foundCart)
 
 
+    foundCart.save()
+    res.redirect('/cart')
+  })
+})
 
 
 

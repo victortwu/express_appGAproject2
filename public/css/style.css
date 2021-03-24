@@ -108,7 +108,18 @@ ul {
   padding-top: 18px;
 }
 
+#cartItemsDiv {
+  background-color: rgba(255, 0, 0, 0.5);
+}
 
+.singleItemDiv {
+  padding: 15px;
+}
+
+.placeOrder {
+  padding-top: 20px;
+  text-align: center;
+}
 /* .cnt {
   margin: auto;
   width: 1000px;
