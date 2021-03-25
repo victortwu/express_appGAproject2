@@ -36,9 +36,9 @@
         </div>
 </div>
 <div class='backBtnDiv'><a href='/menu'><button class="btn btn-outline-secondary">BACK</button></a></div>
-<a href="/menu/<%=items.id%>/edit">Edit</a>
+<a id="hideLink" href="/menu/<%=items.id%>/edit">Edit</a>
 <form method="POST" action="/menu/<%= items.id %>?_method=DELETE">
-    <button class="btn btn-link">Delete</button>
+    <button id="hideLink" class="btn btn-link">Delete</button>
 </form>
 
 <%- include('./partials/footer.ejs') %>

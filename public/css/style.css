@@ -11,7 +11,8 @@ body {
 
 
 footer {
-  position: absolute;
+  width: 100%;
+  margin-top: 150px;
   bottom: 0;
   height: 100px;
 }
@@ -20,6 +21,10 @@ h1 {
   text-align: center;
   padding: 15px;
   font-family: Fjalla One, sans-serif;
+  animation-duration: 2.5s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
 }
 
 h5 {
@@ -63,8 +68,11 @@ h5 {
 }
 
 ul {
-  /* background-image: url('../images/skyline.jpeg'); */
   background-image: none;
+}
+
+ul:hover {
+  background-color: rgba(91, 113, 117, 0.20);
 }
 
 .nav-item {
@@ -155,7 +163,7 @@ ul {
 
 
 .showCard {
-  /* background-color: #7cc975; */
+
   padding: 10px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -165,6 +173,8 @@ ul {
 #showCardImg {
   width: 300px;
   height: 300px;
+  animation-duration: 3s;
+  animation-name: fadein;
   border-radius: 10px
 }
 
@@ -203,6 +213,11 @@ ul {
   padding-top: 20px;
   text-align: center;
 }
+
+#hideLink {
+  opacity: 15%;
+}
+
 #homeImgDiv {
   text-align: center;
 }
@@ -223,69 +238,3 @@ ul {
   to {
   opacity: 100%;
 }
-
-
-/* .cnt {
-  margin: auto;
-  width: 1000px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin-top: 15vh;
-} */
-/* .panel {
-  margin: auto;
-  width: 1000px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin-top: 15vh;
-}
-
-.panel-inner {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  /* transition: transform 0.75s; */
-  /* transform-style: preserve-3d;
-  animation: flip 4s linear forwards infinite;
-  animation-direction: normal;
-}
-
-.panel-front,
-.panel-back {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.panel-front img {
-  border: 1px solid white;
-  border-radius: 10px;
-}
-
-.panel-back {
-  /* background-color: teal;
-  color: white; */
-  /* border: 1px solid white;
-  border-radius: 10px;
-  transform: rotateY(180deg);
-  /* padding: 5px; */
-}
-
-/* .panel-front img {
-  width: 300px;
-  height: 300px;
-}
-
-@keyframes flip {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-} */ */ */ */
