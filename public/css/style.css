@@ -9,6 +9,13 @@ body {
   color: white;
 }
 
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+}
+
 h1 {
   text-align: center;
   padding: 15px;
@@ -18,6 +25,32 @@ h1 {
 h5 {
   font-family: Fjalla One, sans-serif;
 }
+
+#homeLogoDiv {
+  text-align: center;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+ }
+
+#homeLogoImg {
+  width: 400px;
+}
+
+@keyframes slidein {
+  from {
+    margin-left:0%;
+    width:100%
+  }
+
+  to {
+    margin-left:100%;
+    width:300%;
+  }
+}
+
+
 
 #menuCardImg {
   width: 200px;
@@ -170,6 +203,28 @@ ul {
   padding-top: 20px;
   text-align: center;
 }
+#homeImgDiv {
+  text-align: center;
+}
+
+#homeImg {
+  width: 75%;
+  margin-top: 20px;
+  border-radius: 30px;
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+  opacity: 100%;
+}
+
+
 /* .cnt {
   margin: auto;
   width: 1000px;
