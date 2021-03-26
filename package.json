@@ -1,6 +1,12 @@
 {
   "name": "project_2",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.15.5"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
