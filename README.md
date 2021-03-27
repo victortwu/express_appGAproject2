@@ -1,7 +1,10 @@
 # express_appGAproject2
-USER STORY:
 
-User can:
+![wireframe1](/public/images/wireframe1.png)
+![wireframe2](/public/images/wireframe2.png)
+![wireframe3](/public/images/wireframe3.png)
+
+USER STORY:
 
 Visit homepage and at anytime click on menu, login/out, new user, shopping cart icon on the navigation bar.
 
@@ -11,7 +14,7 @@ From the menu, user may click on menu "card" to go to item "show" page or click 
 
 From the item "show" page, user may "add item" to cart or simply view and click a back button or anything on the nav bar
 
-On the shopping cart page, user may "edit" quantity or "remove" item or "checkout" - will be a fake purchase and go to a thank you message.
+On the shopping cart page, user may "remove" item or "checkout" - will be a fake purchase and go to a thank you message.
 
 
 STRETCH GOALS
